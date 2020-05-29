@@ -32,7 +32,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="fas fa-mail-bulk social-icon"></i>
+              <i className="fas fa-mail-bulk social-icon"></i>
             </a>
           </li>
         </ul>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 function Data() {
   const [globalStats, setGlobalStats] = useState([]);
@@ -27,6 +28,7 @@ function Data() {
 
   return (
     <div className="bg-dark">
+      <Navbar />
       <div className="jumbotron bg-dark text-white text-center">
         <h1 className="display-4">Covid-19 Tracker</h1>
         <p className="lead">

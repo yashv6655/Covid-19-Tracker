@@ -1,5 +1,5 @@
 import React from "react";
-import Data from "./components/Data";
+import GlobalData from "./components/data/GlobalData";
 import WorldMap from "./components/WorldMap";
 import ErrorPage from "./components/ErrorPage";
 import "./App.css";
@@ -10,7 +10,7 @@ export default function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Data />
+          <GlobalData />
         </Route>
         <Route path="/worldmap">
           <WorldMap />

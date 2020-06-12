@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
+import Footer from "../Footer";
+import Navbar from "../Navbar";
+import USAData from "./USAData";
 
-function Data() {
+function GlobalData() {
   const [globalStats, setGlobalStats] = useState([]);
   const [countries, setCountries] = useState([]);
   const [currentDate, setCurrentDate] = useState([]); //Date the api data was updated
@@ -14,7 +15,7 @@ function Data() {
     axios
       .get("https://api.covid19api.com/summary")
       .then((res) => {
-        console.log(res);
+        //console.log(res);
         setGlobalStats(res.data.Global);
         setCountries(res.data.Countries);
         setCurrentDate(res.data.Date);
@@ -44,7 +45,7 @@ function Data() {
               <span className="badge badge-danger badge-pill">
                 {globalStats.TotalDeaths
                   ? globalStats.TotalDeaths
-                  : "Please Refresh After One Minute"}
+                  : "Please Refresh The Page"}
               </span>
             </li>
             <li className="list-group-item-warning list-group-item d-flex justify-content-between align-items-center">
@@ -87,6 +88,7 @@ function Data() {
         {/* End of Lists */}
       </div>
       {/* Table Div */}
+      <h1 className="text-info">Global Stats</h1>
       <div
         className="overflow-auto bg-dark text-center"
         style={{ height: "35rem" }}
@@ -145,6 +147,7 @@ function Data() {
         </table>
       </div>
       {/* End of table div */}
+      <USAData />
       <div>
         <Footer />
       </div>
@@ -152,4 +155,4 @@ function Data() {
   );
 }
 
-export default Data;
+export default GlobalData;

@@ -1,32 +1,28 @@
-import React from "react";
-import axios from "axios";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
-import { REACT_APP_FINNHUB_TOKEN } from "../../env";
+import axios from "axios";
 
-export default function USAData() {
-  const [usStates, setUsStates] = useState([]);
+export default function IndiaData() {
+  const [indiaStates, setIndiaStates] = useState([]);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
     axios
-      .get(
-        `https://finnhub.io/api/v1/covid19/us?token=${REACT_APP_FINNHUB_TOKEN}`
-      )
+      .get("http://covid19-india-adhikansh.herokuapp.com/states")
       .then((res) => {
-        setUsStates(res.data);
-        //console.log(res);
+        setIndiaStates(res.data.state);
+        console.log(res.data.state);
       })
       .catch((err) => console.log(err));
   }, []);
 
-  const filterStates = usStates.filter((state) => {
-    return state.state.toLowerCase().includes(search.toLowerCase());
+  const filterStates = indiaStates.filter((state) => {
+    return state.name.toLowerCase().includes(search.toLowerCase());
   });
 
   return (
     <div>
-      <h1 className="text-info text-center mt-5">USA</h1>
+      <h1 className="text-info mt-5 text-center">India</h1>
       <div className="d-flex justify-content-center">
         <div
           className="overflow-auto bg-dark text-center mb-5"
@@ -50,8 +46,8 @@ export default function USAData() {
                 <th scope="col" className="text-danger bg-dark sticky-top">
                   Total Deaths
                 </th>
-                <th scope="col" className="text-white bg-dark sticky-top">
-                  Date Updated
+                <th scope="col" className="text-success bg-dark sticky-top">
+                  Total Recovered
                 </th>
               </tr>
             </thead>
@@ -60,11 +56,11 @@ export default function USAData() {
                 return (
                   <tr key={index}>
                     <th scope="row" className="text-info">
-                      {state.state}
+                      {state.name}
                     </th>
-                    <td className="text-warning">{state.case}</td>
+                    <td className="text-warning">{state.active}</td>
                     <td className="text-danger">{state.death}</td>
-                    <td className="text-white">{state.updated}</td>
+                    <td className="text-success">{state.cured}</td>
                   </tr>
                 );
               })}

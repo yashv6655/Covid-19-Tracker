@@ -3,6 +3,7 @@ import axios from "axios";
 import Footer from "../Footer";
 import Navbar from "../Navbar";
 import USAData from "./USAData";
+import IndiaData from "./IndiaData";
 
 function GlobalData() {
   const [globalStats, setGlobalStats] = useState([]);
@@ -88,66 +89,69 @@ function GlobalData() {
         {/* End of Lists */}
       </div>
       {/* Table Div */}
-      <h1 className="text-info">Global Stats</h1>
-      <div
-        className="overflow-auto bg-dark text-center"
-        style={{ height: "35rem" }}
-      >
-        {/* Search Bar */}
-        <input
-          type="text"
-          placeholder="Search By Country Name"
-          onChange={(e) => setSearch(e.target.value)}
-          className="form-control text-center bg-dark text-primary"
-        />
-        {/* End of Search Bar */}
-        <table className="table table-hover bg-dark">
-          <thead>
-            <tr className="bg-dark text-center">
-              <th scope="col" className="text-info bg-dark sticky-top">
-                Country
-              </th>
-              <th scope="col" className="text-warning bg-dark sticky-top">
-                Total Confirmed
-              </th>
-              <th scope="col" className="text-danger bg-dark sticky-top">
-                Total Deaths
-              </th>
-              <th scope="col" className="text-success bg-dark sticky-top">
-                Total Recovered
-              </th>
-              <th scope="col" className="text-warning bg-dark sticky-top">
-                Latest Confirmed
-              </th>
-              <th scope="col" className="text-danger bg-dark sticky-top">
-                Latest Deaths
-              </th>
-              <th scope="col" className="text-success bg-dark sticky-top">
-                Latest Recovered
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {filterCountries.map((country, index) => {
-              return (
-                <tr key={index}>
-                  <th scope="row" className="text-info">
-                    {country.Country}
-                  </th>
-                  <td className="text-warning">{country.TotalConfirmed}</td>
-                  <td className="text-danger">{country.TotalDeaths}</td>
-                  <td className="text-success">{country.TotalRecovered}</td>
-                  <td className="text-warning">{country.NewConfirmed}</td>
-                  <td className="text-danger">{country.NewDeaths}</td>
-                  <td className="text-success">{country.NewRecovered}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+      <h1 className="text-info text-center">Global Stats</h1>
+      <div className="d-flex justify-content-center">
+        <div
+          className="overflow-auto bg-dark text-center mb-5"
+          style={{ height: "35rem", width: "60rem" }}
+        >
+          {/* Search Bar */}
+          <input
+            type="text"
+            placeholder="Search By Country Name"
+            onChange={(e) => setSearch(e.target.value)}
+            className="form-control text-center bg-dark text-primary"
+          />
+          {/* End of Search Bar */}
+          <table className="table table-hover bg-dark">
+            <thead>
+              <tr className="bg-dark text-center">
+                <th scope="col" className="text-info bg-dark sticky-top">
+                  Country
+                </th>
+                <th scope="col" className="text-warning bg-dark sticky-top">
+                  Total Confirmed
+                </th>
+                <th scope="col" className="text-danger bg-dark sticky-top">
+                  Total Deaths
+                </th>
+                <th scope="col" className="text-success bg-dark sticky-top">
+                  Total Recovered
+                </th>
+                <th scope="col" className="text-warning bg-dark sticky-top">
+                  Latest Confirmed
+                </th>
+                <th scope="col" className="text-danger bg-dark sticky-top">
+                  Latest Deaths
+                </th>
+                <th scope="col" className="text-success bg-dark sticky-top">
+                  Latest Recovered
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {filterCountries.map((country, index) => {
+                return (
+                  <tr key={index}>
+                    <th scope="row" className="text-info">
+                      {country.Country}
+                    </th>
+                    <td className="text-warning">{country.TotalConfirmed}</td>
+                    <td className="text-danger">{country.TotalDeaths}</td>
+                    <td className="text-success">{country.TotalRecovered}</td>
+                    <td className="text-warning">{country.NewConfirmed}</td>
+                    <td className="text-danger">{country.NewDeaths}</td>
+                    <td className="text-success">{country.NewRecovered}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
       {/* End of table div */}
       <USAData />
+      <IndiaData />
       <div>
         <Footer />
       </div>

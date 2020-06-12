@@ -62,7 +62,7 @@ export default function USAData() {
                   </th>
                   <td className="text-warning">{state.case}</td>
                   <td className="text-danger">{state.death}</td>
-                  <td className="text-white">{state.death}</td>
+                  <td className="text-white">{state.updated}</td>
                 </tr>
               );
             })}

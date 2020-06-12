@@ -11,7 +11,7 @@ export default function USAData() {
   useEffect(() => {
     axios
       .get(
-        `https://finnhub.io/api/v1/covid19/us?token=${REACT_APP_FINNHUB_TOKEN}`
+        `https://finnhub.io/api/v1/covid19/us?token=${process.env.REACT_APP_FINNHUB_TOKEN}`
       )
       .then((res) => {
         setUsStates(res.data);

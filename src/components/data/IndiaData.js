@@ -8,7 +8,7 @@ export default function IndiaData() {
 
   useEffect(() => {
     axios
-      .get("http://covid19-india-adhikansh.herokuapp.com/states")
+      .get("https://covid19-india-adhikansh.herokuapp.com/states")
       .then((res) => {
         setIndiaStates(res.data.state);
         console.log(res.data.state);

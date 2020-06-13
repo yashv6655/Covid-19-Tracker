@@ -4,6 +4,11 @@ import Footer from "../Footer";
 import Navbar from "../Navbar";
 import USAData from "./USAData";
 import IndiaData from "./IndiaData";
+import Linking from "../Linking";
+import JapanData from "./JapanData";
+import NorthAmericaData from "./NorthAmericaData";
+import SouthAmericaData from "./SouthAmericaData";
+import EuropeData from "./EuropeData";
 
 function GlobalData() {
   const [globalStats, setGlobalStats] = useState([]);
@@ -31,7 +36,7 @@ function GlobalData() {
   return (
     <div className="bg-dark">
       <Navbar />
-      <div className="jumbotron bg-dark text-white text-center">
+      <div className="jumbotron text-dark text-center">
         <h1 className="display-4">Covid-19 Tracker</h1>
         <p className="lead">
           Latest Global Stats Provided By Covid-19 API As Per {currentDate}
@@ -88,11 +93,12 @@ function GlobalData() {
         </div>
         {/* End of Lists */}
       </div>
+      <Linking />
       {/* Table Div */}
-      <h1 className="text-info text-center">Global Stats</h1>
+      <h1 className="text-info text-center display-4">Global Stats</h1>
       <div className="d-flex justify-content-center">
         <div
-          className="overflow-auto bg-dark text-center mb-5"
+          className="overflow-auto bg-dark text-center mb-3"
           style={{ height: "35rem", width: "60rem" }}
         >
           {/* Search Bar */}
@@ -152,9 +158,13 @@ function GlobalData() {
       {/* End of table div */}
       <USAData />
       <IndiaData />
-      <div>
+      <JapanData />
+      <NorthAmericaData />
+      {/* <SouthAmericaData /> */}
+      <EuropeData />
+      {/* <div>
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 }

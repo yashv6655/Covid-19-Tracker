@@ -1,28 +1,34 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function IndiaData() {
-  const [indiaStates, setIndiaStates] = useState([]);
+export default function JapanData() {
+  const [prefectures, setPrefectures] = useState([]);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
     axios
-      .get("https://covid19-india-adhikansh.herokuapp.com/states")
+      .get("https://covid19-japan-web-api.now.sh/api/v1/prefectures")
       .then((res) => {
-        setIndiaStates(res.data.state);
-        console.log(res.data.state);
-      })
-      .catch((err) => console.log(err));
+        setPrefectures(res.data);
+        //console.log(res.data);
+      });
   }, []);
 
-  const filterStates = indiaStates.filter((state) => {
-    return state.name.toLowerCase().includes(search.toLowerCase());
+  const filterPrefecture = prefectures.filter((prefecture) => {
+    return prefecture.name_en.toLowerCase().includes(search.toLowerCase());
   });
+
+  const addDashesToDate = (date) => {
+    date = date.toString();
+    const year = date.slice(0, 4);
+    const month = date.slice(4, 6);
+    const day = date.slice(6, 8);
+    return year + "-" + month + "-" + day;
+  };
 
   return (
     <div>
-      <h1 className="text-info mt-5 text-center display-4">India</h1>
+      <h1 className="text-info mt-5 text-center display-4">Japan</h1>
       <div className="d-flex justify-content-center">
         <div
           className="overflow-auto bg-dark text-center mb-3"
@@ -38,7 +44,7 @@ export default function IndiaData() {
             <thead>
               <tr className="bg-dark text-center">
                 <th scope="col" className="text-info bg-dark sticky-top">
-                  State
+                  Prefecture
                 </th>
                 <th scope="col" className="text-warning bg-dark sticky-top">
                   Total Confirmed
@@ -46,21 +52,23 @@ export default function IndiaData() {
                 <th scope="col" className="text-danger bg-dark sticky-top">
                   Total Deaths
                 </th>
-                <th scope="col" className="text-success bg-dark sticky-top">
-                  Total Recovered
+                <th scope="col" className="text-white bg-dark sticky-top">
+                  Date Updated
                 </th>
               </tr>
             </thead>
             <tbody>
-              {filterStates.map((state, index) => {
+              {filterPrefecture.map((pref, index) => {
                 return (
-                  <tr key={state._id}>
+                  <tr key={pref.id}>
                     <th scope="row" className="text-info">
-                      {state.name}
+                      {pref.name_ja}/{pref.name_en}
                     </th>
-                    <td className="text-warning">{state.active}</td>
-                    <td className="text-danger">{state.death}</td>
-                    <td className="text-success">{state.cured}</td>
+                    <td className="text-warning">{pref.cases}</td>
+                    <td className="text-danger">{pref.deaths}</td>
+                    <td className="text-white">
+                      {addDashesToDate(pref.last_updated.cases_date)}
+                    </td>
                   </tr>
                 );
               })}

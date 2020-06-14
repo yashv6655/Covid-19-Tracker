@@ -2,35 +2,39 @@ import React from "react";
 
 export default function Linking() {
   return (
-    <div className="d-flex justify-content-center">
-      <div
-        className="list-group text-center mb-5"
-        style={{ height: "auto", width: "9.75rem" }}
-      >
+    <div className="d-flex justify-content-center mb-5">
+      <div class="list-group align-globalLists-center mr-1">
+        <li className="list-group-item list-group-item-action active ">
+          <strong>Choose Reigon</strong>
+        </li>
         <a
-          className="list-group-item list-group-item-action"
           href="#north-america"
+          className="list-group-item list-group-item-action"
         >
           <strong>North America</strong>
         </a>
-      </div>
-      <div
-        className="list-group text-center mb-5 ml-2"
-        style={{ height: "auto", width: "9.75" }}
-      >
         <a
-          className="list-group-item list-group-item-action"
           href="#south-america"
+          className="list-group-item list-group-item-action"
         >
           <strong>South America</strong>
         </a>
-      </div>
-      <div
-        className="list-group text-center mb-5 ml-2"
-        style={{ height: "auto", width: "9.75rem" }}
-      >
-        <a className="list-group-item list-group-item-action" href="#europe">
+        <a href="#europe" className="list-group-item list-group-item-action">
           <strong>Europe</strong>
+        </a>
+      </div>
+      <div class="list-group align-globalLists-center">
+        <li className="list-group-item list-group-item-action active ">
+          <strong>Choose Reigon</strong>
+        </li>
+        <a href="#africa" className="list-group-item list-group-item-action">
+          <strong>Africa</strong>
+        </a>
+        <a href="#asia" className="list-group-item list-group-item-action">
+          <strong>Asia</strong>
+        </a>
+        <a href="#australia" className="list-group-item list-group-item-action">
+          <strong>Australia/Oceania</strong>
         </a>
       </div>
     </div>

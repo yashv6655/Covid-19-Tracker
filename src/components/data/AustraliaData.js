@@ -3,14 +3,14 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 
-export default function EuropeData() {
+export default function AustraliaData() {
   const [countries, setCountries] = useState([]);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
     axios
       .get(
-        "https://covid19-update-api.herokuapp.com/api/v1/world/continent/europe"
+        "https://covid19-update-api.herokuapp.com/api/v1/world/continent/australia"
       )
       .then((res) => {
         setCountries(res.data.countries);
@@ -24,8 +24,10 @@ export default function EuropeData() {
   });
 
   return (
-    <div id="europe">
-      <h1 className="text-info mt-5 text-center display-4">Europe</h1>
+    <div id="australia">
+      <h1 className="text-info mt-5 text-center display-4">
+        Australia/Oceania
+      </h1>
       <div className="d-flex justify-content-center">
         <div
           className="overflow-auto bg-dark text-center mb-3"

@@ -9,6 +9,9 @@ import JapanData from "./JapanData";
 import NorthAmericaData from "./NorthAmericaData";
 import SouthAmericaData from "./SouthAmericaData";
 import EuropeData from "./EuropeData";
+import AfricaData from "./AfricaData";
+import AsiaData from "./AsiaData";
+import AustraliaData from "./AustraliaData";
 
 function GlobalData() {
   const [globalStats, setGlobalStats] = useState([]);
@@ -41,7 +44,7 @@ function GlobalData() {
         <p className="lead">
           Latest Global Stats Provided By Covid-19 API As Per {currentDate}
         </p>
-        <hr className="my-5 bg-white" />
+        <hr className="my-5 bg-dark" />
         {/* Lists */}
         <div className="center-lists">
           {/* Total Global List */}
@@ -93,8 +96,8 @@ function GlobalData() {
         </div>
         {/* End of Lists */}
       </div>
-      <Linking />
       {/* Table Div */}
+      <Linking />
       <h1 className="text-info text-center display-4">Global Stats</h1>
       <div className="d-flex justify-content-center">
         <div
@@ -160,11 +163,11 @@ function GlobalData() {
       <IndiaData />
       <JapanData />
       <NorthAmericaData />
-      {/* <SouthAmericaData /> */}
       <EuropeData />
-      {/* <div>
-        <Footer />
-      </div> */}
+      <AfricaData />
+      <AsiaData />
+      <AustraliaData />
+      <Footer />
     </div>
   );
 }

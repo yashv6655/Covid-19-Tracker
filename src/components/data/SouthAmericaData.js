@@ -10,7 +10,7 @@ export default function SouthAmericaData({ countries }) {
 
   return (
     <div id="south-america">
-      <h1 className="text-info mt-5 text-center display-4">South America</h1>
+      <h1 className="text-info mt-5 text-center">South America</h1>
       <div className="d-flex justify-content-center">
         <div
           className="overflow-auto bg-dark text-center mb-3"

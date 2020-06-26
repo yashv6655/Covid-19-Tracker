@@ -11,7 +11,7 @@ export default function IndiaData() {
       .get("https://covid19-india-adhikansh.herokuapp.com/states")
       .then((res) => {
         setIndiaStates(res.data.state);
-        console.log(res.data.state);
+        //console.log(res.data.state);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -22,7 +22,7 @@ export default function IndiaData() {
 
   return (
     <div>
-      <h1 className="text-info mt-5 text-center display-4">India</h1>
+      <h1 className="text-info mt-5 text-center">India</h1>
       <div className="d-flex justify-content-center">
         <div
           className="overflow-auto bg-dark text-center mb-3"

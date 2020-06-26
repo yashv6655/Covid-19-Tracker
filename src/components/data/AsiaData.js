@@ -25,7 +25,7 @@ export default function AsiaData() {
 
   return (
     <div id="asia">
-      <h1 className="text-info mt-5 text-center display-4">Asia</h1>
+      <h1 className="text-info mt-5 text-center">Asia</h1>
       <div className="d-flex justify-content-center">
         <div
           className="overflow-auto bg-dark text-center mb-3"

@@ -25,7 +25,7 @@ export default function EuropeData() {
 
   return (
     <div id="europe">
-      <h1 className="text-info mt-5 text-center display-4">Europe</h1>
+      <h1 className="text-info mt-5 text-center">Europe</h1>
       <div className="d-flex justify-content-center">
         <div
           className="overflow-auto bg-dark text-center mb-3"

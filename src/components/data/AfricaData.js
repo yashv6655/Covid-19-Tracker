@@ -25,7 +25,7 @@ export default function AfricaData() {
 
   return (
     <div id="africa">
-      <h1 className="text-info mt-5 text-center display-4">Africa</h1>
+      <h1 className="text-info mt-5 text-center">Africa</h1>
       <div className="d-flex justify-content-center">
         <div
           className="overflow-auto bg-dark text-center mb-3"

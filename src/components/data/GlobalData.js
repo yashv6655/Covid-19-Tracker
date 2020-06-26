@@ -98,7 +98,7 @@ function GlobalData() {
       </div>
       {/* Table Div */}
       <Linking />
-      <h1 className="text-info text-center display-4">Global Stats</h1>
+      <h1 className="text-info text-center">Global Stats</h1>
       <div className="d-flex justify-content-center">
         <div
           className="overflow-auto bg-dark text-center mb-3"

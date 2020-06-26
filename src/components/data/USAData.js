@@ -26,7 +26,7 @@ export default function USAData() {
 
   return (
     <div>
-      <h1 className="text-info text-center display-4 mt-5">USA</h1>
+      <h1 className="text-info text-center mt-5">USA</h1>
       <div className="d-flex justify-content-center">
         <div
           className="overflow-auto bg-dark text-center mb-5"

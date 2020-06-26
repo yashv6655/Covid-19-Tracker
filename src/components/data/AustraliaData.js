@@ -25,9 +25,7 @@ export default function AustraliaData() {
 
   return (
     <div id="australia">
-      <h1 className="text-info mt-5 text-center display-4">
-        Australia/Oceania
-      </h1>
+      <h1 className="text-info mt-5 text-center">Australia/Oceania</h1>
       <div className="d-flex justify-content-center">
         <div
           className="overflow-auto bg-dark text-center mb-3"

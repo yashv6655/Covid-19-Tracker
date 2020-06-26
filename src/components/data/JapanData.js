@@ -28,7 +28,7 @@ export default function JapanData() {
 
   return (
     <div>
-      <h1 className="text-info mt-5 text-center display-4">Japan</h1>
+      <h1 className="text-info mt-5 text-center">Japan</h1>
       <div className="d-flex justify-content-center">
         <div
           className="overflow-auto bg-dark text-center mb-3"

@@ -7,7 +7,7 @@ import IndiaData from "./IndiaData";
 import Linking from "../Linking";
 import JapanData from "./JapanData";
 import NorthAmericaData from "./NorthAmericaData";
-import SouthAmericaData from "./SouthAmericaData";
+//import SouthAmericaData from "./SouthAmericaData";
 import EuropeData from "./EuropeData";
 import AfricaData from "./AfricaData";
 import AsiaData from "./AsiaData";

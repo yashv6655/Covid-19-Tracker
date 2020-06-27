@@ -65,6 +65,7 @@ export default function NorthAmericaData() {
                     </tr>
                   );
                 }
+                return true;
               })}
             </tbody>
           </table>

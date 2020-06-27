@@ -49,6 +49,7 @@ export default function SouthAmericaData({ countries }) {
                     </tr>
                   );
                 }
+                return true;
               })}
             </tbody>
           </table>

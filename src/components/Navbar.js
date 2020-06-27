@@ -27,7 +27,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/worldmap">
+              <Link className="nav-link disabled" to="/worldmap">
                 World Map
               </Link>
             </li>

@@ -3,7 +3,7 @@ import axios from "axios";
 import Footer from "../Footer";
 import Navbar from "../Navbar";
 import USAData from "./USAData";
-import IndiaData from "./IndiaData";
+// import IndiaData from "./IndiaData";
 import Linking from "../Linking";
 import JapanData from "./JapanData";
 import NorthAmericaData from "./NorthAmericaData";
@@ -160,7 +160,7 @@ function GlobalData() {
       </div>
       {/* End of table div */}
       <USAData />
-      <IndiaData />
+      {/* <IndiaData /> */}
       <JapanData />
       <NorthAmericaData />
       <EuropeData />

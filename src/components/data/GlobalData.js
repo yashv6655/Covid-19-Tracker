@@ -97,7 +97,7 @@ function GlobalData() {
         {/* End of Lists */}
       </div>
       {/* Table Div */}
-      <Linking />
+      {/* <Linking /> */}
       <h1 className="text-info text-center">Global Stats</h1>
       <div className="d-flex justify-content-center">
         <div
@@ -162,11 +162,11 @@ function GlobalData() {
       <USAData />
       {/* <IndiaData /> */}
       <JapanData />
-      <NorthAmericaData />
+      {/* <NorthAmericaData />
       <EuropeData />
       <AfricaData />
       <AsiaData />
-      <AustraliaData />
+      <AustraliaData /> */}
       <Footer />
     </div>
   );

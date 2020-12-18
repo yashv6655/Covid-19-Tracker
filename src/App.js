@@ -12,9 +12,9 @@ export default function App() {
         <Route exact path="/">
           <GlobalData />
         </Route>
-        <Route path="/worldmap">
+        {/* <Route path="/worldmap">
           <WorldMap />
-        </Route>
+        </Route> */}
         <Route path="*">
           <ErrorPage />
         </Route>
